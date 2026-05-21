@@ -26,6 +26,7 @@ while running:
         elif index == 1:
                 player.choose_magic()
                 magic_choice = int(input("Choose a magic: ")) - 1
+                magic_dmg = player.generate_spell_damage(magic_choice)
                 magic = player.generate_spell_damage(magic_choice)
                 spell = player.get_spell_name(magic_choice)
                 cost = player.get_spell_mp_cost(magic_choice)
@@ -38,7 +39,7 @@ while running:
 
                 player.reduce_mp(cost)
                 enemy.take_dmg(magic_dmg)
-                print(bcolors.OKBLUE + "\n" + spell + "deals", str(magic_dmg), "points og damage" + bcolors.ENDC)
+                print(bcolors.OKBLUE + "\n" + spell + "deals", str(magic_dmg), "points of damage" + bcolors.ENDC)
 
 
 
